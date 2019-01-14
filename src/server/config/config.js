@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import logger from '../helpers/logger';
+import seedDb from '../seeder/seedController';
 
 dotenv.config();
 
@@ -13,7 +14,11 @@ const mongoConfig = () => {
   );
 
   const db = mongoose.connection;
-  db.once('open', () => logger.info({ message: 'Connection to the database is secured' }));
+  db.once(
+    'open',
+    () => logger.info({ message: 'Connection to the database is secured' }),
+    seedDb()
+  );
   db.on('error', () => logger.error({ message: 'Database connection error' }));
 };
 
