@@ -10,7 +10,7 @@ const mongoConfig = () => {
   const url = process.env.MONGO_URL;
   mongoose.connect(
     url,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true, useCreateIndex: true }
   );
 
   const db = mongoose.connection;
