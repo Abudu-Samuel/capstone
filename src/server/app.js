@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import path from 'path';
 import morgan from 'morgan';
 import compression from 'compression';
 import dotenv from 'dotenv';
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use(compression());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+app.use(express.static('dist'));
 
 app.get('/api', (req, res) => {
   res.json({
@@ -34,6 +36,10 @@ app.all('/api*', (req, res) => {
     status: 'Failed',
     message: 'Api has no match, redirect to /api'
   });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './index.html'));
 });
 
 app.listen(port, () =>
