@@ -2,9 +2,11 @@ import types from '../actions/actionTypes';
 
 const initialState = {
   isProcessing: false,
-  isAuthenticated: false,
+  isAuthenticated: !!localStorage.getItem('x-access-token'),
   generalError: '',
-  userData: {}
+  userData: {},
+  cheatSheets: [],
+  searchData: null
 };
 
 export default (state = initialState, action) => {
@@ -35,6 +37,24 @@ export default (state = initialState, action) => {
       return {
         ...state,
         generalError: action.error
+      };
+
+    case types.LOG_OUT_SUCCESS:
+      return {
+        ...state,
+        userData: {}
+      };
+
+    case types.FETCH_GIT_CHEAT:
+      return {
+        ...state,
+        cheatSheets: action.payload
+      };
+
+    case types.SEARCH_GIT_CHEAT:
+      return {
+        ...state,
+        searchData: [...action.searchData]
       };
 
     default:

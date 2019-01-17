@@ -47,14 +47,13 @@ class SignIn extends Component {
     } else {
       actions.userLogin(this.state).then(() => {
         const { user } = this.props;
-        if (!user.generalError) history.push('/page');
+        if (!user.generalError) history.push('/cheat-sheet');
       });
     }
   };
 
   render() {
     const { errors } = this.state;
-
     return (
       <Fragment>
         <div className="row">
@@ -79,7 +78,7 @@ class SignIn extends Component {
                 </div>
 
                 <div className="md-form">
-                  <i className="fa fa-lock prefix purple-text" />
+                  <i className="fa fa-eye prefix purple-text" />
                   <input
                     type="password"
                     name="password"
