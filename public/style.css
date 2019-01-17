@@ -44,3 +44,24 @@ body {
   font-size: 12px;
   text-align: right !important
 }
+
+.min-wid {
+  min-width: 207%;
+  max-width: 207%;
+}
+
+.title {
+  color: #ff6ec4;
+  font-size: 18px
+}
+
+.command-text {
+  font-style: italic;
+  cursor: pointer;
+}
+
+.card {
+  border-bottom: 4px solid #ff6ec4 !important;
+  border-top: 4px solid #ff6ec4 !important;
+  border-radius: 5px 80px 5px 80px
+}

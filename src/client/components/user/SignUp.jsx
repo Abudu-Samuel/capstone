@@ -97,7 +97,7 @@ class SignUp extends Component {
                 </div>
 
                 <div className="md-form">
-                  <i className="fa fa-lock prefix purple-text" />
+                  <i className="fa fa-eye prefix purple-text" />
                   <input
                     type="password"
                     name="password"
