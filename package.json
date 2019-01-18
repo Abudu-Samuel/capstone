@@ -14,7 +14,7 @@
     "build:prod:server": "babel src/server/ -d dist/",
     "build:prod": "npm run build:prod:client && npm run build:prod:server",
     "heroku-postbuild": "npm run build:prod",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc --reporter=html --reporter=text mocha --timeout 500000 --require @babel/register --require @babel/polyfill src/server/test/*test.js --watch --watch-extensions js"
   },
   "repository": {
     "type": "git",

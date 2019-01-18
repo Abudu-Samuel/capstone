@@ -24,7 +24,7 @@ app.use(express.static('dist'));
 
 app.get('/api', (req, res) => {
   res.json({
-    status: 'success',
+    status: 'Success',
     message: 'Welcome to Capstone'
   });
 });
