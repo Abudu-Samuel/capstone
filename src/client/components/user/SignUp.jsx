@@ -14,7 +14,7 @@ const propTypes = {
   }).isRequired
 };
 
-class SignUp extends Component {
+export class SignUp extends Component {
   initialState = {
     email: '',
     password: '',
@@ -48,7 +48,7 @@ class SignUp extends Component {
     } else {
       actions.userSignup(this.state).then(() => {
         const { user } = this.props;
-        if (!user.generalError) history.push('/page');
+        if (!user.generalError) history.push('/cheat-sheet');
       });
     }
   };

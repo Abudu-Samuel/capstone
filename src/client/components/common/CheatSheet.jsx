@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import * as userActions from '../../actions/userActions';
 import EmptySearchResult from './EmptySearchResult';
 
-class CheatSheet extends Component {
+export class CheatSheet extends Component {
 
   state = {
     copied: false,

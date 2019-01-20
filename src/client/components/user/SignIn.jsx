@@ -14,7 +14,7 @@ const propTypes = {
   }).isRequired
 };
 
-class SignIn extends Component {
+export class SignIn extends Component {
   initialState = {
     email: '',
     password: '',
