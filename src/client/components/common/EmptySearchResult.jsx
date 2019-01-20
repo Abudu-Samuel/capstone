@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EmptySearchResult = () => (
+export const EmptySearchResult = () => (
   <div>
     <h4 className="purple-text font-weight-bold text-center">
       Sorry, try a different search word!

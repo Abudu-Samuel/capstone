@@ -12,7 +12,7 @@ const propTypes = {
   }).isRequired
 };
 
-class Header extends Component {
+export class Header extends Component {
   handleLogOut = event => {
     const { actions, history } = this.props;
     event.preventDefault();
